@@ -14,21 +14,27 @@ const Welcome = () => (
     }}
   >
     <img
-      style={{ maxWidth: 200, marginBottom: 30, color: 'rgb(0, 178, 255)' }}
+      style={{ maxWidth: 200, marginBottom: 24, marginTop: -48 }}
       src={logo}
       alt={'logo'}
     />
     <Typography
       style={{
-        fontWeight: 'bold',
-        marginBottom: 30,
-        color: 'rgb(0, 130, 209)',
+        marginBottom: 16,
+        color: 'rgb(0, 0, 0, 0.72)',
+        fontWeight: 100,
       }}
       variant={'h4'}
     >
-      Welcome to
+      welcome to
     </Typography>
-    <Typography style={{ fontWeight: 200 }} variant={'h3'}>
+    <Typography
+      style={{
+        fontWeight: 200,
+        color: 'rgb(0, 130, 209)',
+      }}
+      variant={'h3'}
+    >
       MUI Theming Tutorial
     </Typography>
   </div>
