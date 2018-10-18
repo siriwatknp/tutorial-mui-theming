@@ -1,16 +1,9 @@
-import { createMuiTheme } from '@material-ui/core/styles'
+import { createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
-  overrides: {
-    MuiButton: {
-      outlinedPrimary: {
-        borderWidth: 1.5,
-        '&:hover': {
-          borderWidth: 1.5,
-        }
-      }
-    }
-  }
-})
+  typography: {
+    useNextVariants: true,
+  },
+});
 
-export default theme
+export default theme;
