@@ -9,11 +9,20 @@ import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import Help from '@material-ui/icons/Help';
+
+import withStyles from '@material-ui/core/styles/withStyles';
 
 // ICONS
 import Notifications from '@material-ui/icons/Notifications';
 
-const Header = () => (
+const styles = () => ({
+  grow: {
+    flexGrow: 1,
+  },
+});
+
+const Header = ({ classes }) => (
   <React.Fragment>
     <AppBar className={'primary-app-bar'} color={'default'} position={'sticky'}>
       <Toolbar>
@@ -62,7 +71,11 @@ const Header = () => (
     </AppBar>
     <AppBar className={'third-app-bar'} color={'default'} position={'static'}>
       <Toolbar>
-        <Typography variant={'h4'}>Authentication</Typography>
+        <Typography variant={'h5'} className={classes.grow}>Authentication</Typography>
+        <Button variant={'outlined'} color={'inherit'}>
+          Web setup
+        </Button>
+        <Help />
       </Toolbar>
     </AppBar>
     <AppBar className={'fourth-app-bar'} color={'default'} position={'static'}>
@@ -76,4 +89,4 @@ const Header = () => (
   </React.Fragment>
 );
 
-export default Header;
+export default withStyles(styles)(Header);

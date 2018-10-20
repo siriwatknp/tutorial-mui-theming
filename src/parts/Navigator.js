@@ -76,7 +76,9 @@ const Navigator = () => (
       </ListItem>
       {categories.map(({ id, children }) => (
         <React.Fragment key={id}>
-          <ListItem>{id}</ListItem>
+          <ListItem>
+            <ListItemText>{id}</ListItemText>
+          </ListItem>
           {children.map(({ id: childId, icon }) => (
             <ListItem button dense key={childId}>
               <ListItemIcon>{icon}</ListItemIcon>

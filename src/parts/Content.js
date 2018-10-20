@@ -17,6 +17,7 @@ const Content = () => (
     style={{
       maxWidth: 936,
       margin: 'auto',
+      overflow: 'hidden',
     }}
   >
     <AppBar position={'static'} color={'default'}>
