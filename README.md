@@ -1,21 +1,16 @@
-<p align="center"><a href="https://medium.com/@notrab/getting-started-with-create-react-app-redux-react-router-redux-thunk-d6a19259f71f"><img src="https://i.imgur.com/PATsTx2.png" title="View tutorial" alt="React, React Router, Redux and Redux Thunk" width="900"></a></p>
 
-* Tutorial: [Getting started with create-react-app, Redux, React Router & Redux Thunk](https://medium.com/@notrab/getting-started-with-create-react-app-redux-react-router-redux-thunk-d6a19259f71f)
-* [Demo](https://create-react-app-redux.now.sh) 🙌
+# Material-ui theming tutorial
 
 ## Installation
 
 ```bash
-git clone https://github.com/notrab/create-react-app-redux.git
-cd create-react-app-redux
-yarn
+git clone https://github.com/siriwatknp/tutorial-mui-theming.git
+yarn && yarn start
 ```
 
-## Get started
+## Story
 
-```bash
-yarn start
-```
+follow this tutorial
 
-This boilerplate is built using [create-react-app](https://github.com/facebook/create-react-app) so you will want to read the User Guide for more goodies.
-# tutorial-mui-theming
+[https://medium.com/@siriwatknp/how-to-customize-material-ui-theme-v3-2-0-part-2-7e84062b6872](https://medium.com/@siriwatknp/how-to-customize-material-ui-theme-v3-2-0-part-2-7e84062b6872)
+
