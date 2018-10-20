@@ -46,7 +46,7 @@ const Header = ({ classes }) => (
     </AppBar>
     <AppBar
       className={'secondary-app-bar'}
-      color={'default'}
+      color={'primary'}
       position={'sticky'}
     >
       <Toolbar>
@@ -57,7 +57,7 @@ const Header = ({ classes }) => (
             </Typography>
           </Grid>
           <Grid item>
-            <Notifications color={'action'} />
+            <Notifications color={'inherit'} />
           </Grid>
           <Grid item>
             <Avatar
@@ -69,21 +69,21 @@ const Header = ({ classes }) => (
         </Grid>
       </Toolbar>
     </AppBar>
-    <AppBar className={'third-app-bar'} color={'default'} position={'static'}>
+    <AppBar className={'third-app-bar'} color={'primary'} position={'static'}>
       <Toolbar>
-        <Typography variant={'h5'} className={classes.grow}>Authentication</Typography>
+        <Typography color={'inherit'} variant={'h5'} className={classes.grow}>Authentication</Typography>
         <Button variant={'outlined'} color={'inherit'}>
           Web setup
         </Button>
         <Help />
       </Toolbar>
     </AppBar>
-    <AppBar className={'fourth-app-bar'} color={'default'} position={'static'}>
-      <Tabs value={0} indicatorColor="primary" textColor="primary">
-        <Tab label="User" />
-        <Tab label="Sign-in method" />
-        <Tab label="Templates" />
-        <Tab label="Usage" />
+    <AppBar className={'fourth-app-bar'} color={'primary'} position={'static'}>
+      <Tabs value={0} textColor={'inherit'}>
+        <Tab textColor={'inherit'} label="User" />
+        <Tab textColor={'inherit'} label="Sign-in method" />
+        <Tab textColor={'inherit'} label="Templates" />
+        <Tab textColor={'inherit'} label="Usage" />
       </Tabs>
     </AppBar>
   </React.Fragment>
