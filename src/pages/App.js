@@ -19,6 +19,7 @@ import IconButton from '@material-ui/core/IconButton';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 import Settings from '@material-ui/icons/Settings';
 import Home from '@material-ui/icons/Home';
@@ -59,6 +60,7 @@ const categories = [
 
 const App = styled(({ className }) => (
   <div className={cx('App', className)}>
+    <CssBaseline />
     <Drawer variant="permanent" classes={{ paper: 'navigator' }}>
       <List>
         <ListItem>
@@ -108,13 +110,24 @@ const App = styled(({ className }) => (
         position={'sticky'}
       >
         <Toolbar>
-          <Typography>
-            You're viewing the Firebase demo project. Learn more
-          </Typography>
-          <Button color={'primary'} variant={'contained'}>
-            Create a project
-          </Button>
-          <Button>Exit demo</Button>
+          <Grid container justify={'center'} alignItems={'center'} spacing={16}>
+            <Grid item>
+              <Typography>
+                You're viewing the Firebase demo project.
+              </Typography>
+              <Typography color={'primary'} component={'a'} href={'#'}>
+                Learn more
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Button color={'primary'} variant={'contained'}>
+                Create a project
+              </Button>
+            </Grid>
+            <Grid item>
+              <Button>Exit demo</Button>
+            </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
       <AppBar
@@ -123,13 +136,21 @@ const App = styled(({ className }) => (
         position={'sticky'}
       >
         <Toolbar>
-          <Typography>Go to docs</Typography>
-          <Notifications />
-          <Avatar
-            src={
-              'https://lh3.googleusercontent.com/-mYNSKSzYGjw/AAAAAAAAAAI/AAAAAAAAAAA/ABtNlbABtwn15AVhtNsFWiPi-8vW8A7Lig/s64-c-mo/photo.jpg'
-            }
-          />
+          <Grid container spacing={16} justify={'flex-end'} alignItems={'center'}>
+            <Grid item>
+              <Typography component={'a'} href={'#'} color={'primary'}>Go to docs</Typography>
+            </Grid>
+            <Grid item>
+              <Notifications color={'action'} />
+            </Grid>
+            <Grid item>
+              <Avatar
+                src={
+                  'https://lh3.googleusercontent.com/-mYNSKSzYGjw/AAAAAAAAAAI/AAAAAAAAAAA/ABtNlbABtwn15AVhtNsFWiPi-8vW8A7Lig/s64-c-mo/photo.jpg'
+                }
+              />
+            </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
       <AppBar className={'third-app-bar'} color={'default'} position={'static'}>

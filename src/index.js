@@ -16,8 +16,8 @@ import configureStore, { history } from './store';
 import App from './pages/App';
 
 // CSS
-import 'sanitize.css/sanitize.css';
-import 'index.css';
+// import 'sanitize.css/sanitize.css';
+// import 'index.css';
 
 const store = configureStore();
 
