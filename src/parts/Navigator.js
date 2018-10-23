@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 // COMPONENTS
 import IconButton from '@material-ui/core/IconButton';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -49,7 +49,10 @@ const categories = [
 ];
 
 const Navigator = ({ classes }) => (
-  <Drawer variant="permanent" classes={{ paper: 'navigator' }}>
+  <Drawer
+    variant="permanent"
+    classes={{ paper: cx('navigator', classes.drawer) }}
+  >
     <List className={classes.list}>
       <ListItem className={classes.header}>
         <ListItemIcon className={classes.itemIcon}>
@@ -90,7 +93,12 @@ const Navigator = ({ classes }) => (
           {children.map(({ id: childId, icon }) => (
             <ListItem button dense key={childId}>
               <ListItemIcon className={classes.itemIcon}>{icon}</ListItemIcon>
-              <ListItemText classes={{ primary: classes.itemText }}>
+              <ListItemText
+                classes={{
+                  primary: classes.itemText,
+                  textDense: classes.textDense,
+                }}
+              >
                 {childId}
               </ListItemText>
             </ListItem>
