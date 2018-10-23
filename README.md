@@ -12,5 +12,7 @@ yarn && yarn start
 
 follow this tutorial
 
-[https://medium.com/@siriwatknp/how-to-customize-material-ui-theme-v3-2-0-part-2-7e84062b6872](https://medium.com/@siriwatknp/how-to-customize-material-ui-theme-v3-2-0-part-2-7e84062b6872)
+[Read Part 1](https://medium.com/@siriwatknp/how-to-customize-material-ui-theme-v3-2-0-part-1-13e67acc8f80)
+
+[Read Part 2](https://medium.com/@siriwatknp/how-to-customize-material-ui-theme-v3-2-0-part-2-7e84062b6872)
 
