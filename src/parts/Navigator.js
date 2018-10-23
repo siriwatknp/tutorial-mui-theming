@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // COMPONENTS
 import IconButton from '@material-ui/core/IconButton';
@@ -22,6 +23,9 @@ import Dashboard from '@material-ui/icons/Dashboard';
 import SettingsApplications from '@material-ui/icons/SettingsApplications';
 import PhonelinkSetup from '@material-ui/icons/PhonelinkSetup';
 
+// STYLES
+import withNavigatorStyles from './Navigator.style';
+
 const categories = [
   {
     id: 'Develop',
@@ -44,26 +48,30 @@ const categories = [
   },
 ];
 
-const Navigator = () => (
+const Navigator = ({ classes }) => (
   <Drawer variant="permanent" classes={{ paper: 'navigator' }}>
     <List>
-      <ListItem>
-        <img
-          alt={'logo'}
-          className={'firebase-logo'}
-          src={
-            'https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png'
-          }
-        />
-        <img
-          alt={'label'}
-          className={'firebase-label'}
-          src={
-            'https://www.gstatic.com/mobilesdk/160323_mobilesdk/images/firebase_logotype_white_18dp.svg'
-          }
-        />
+      <ListItem className={classes.header}>
+        <ListItemIcon>
+          <img
+            alt={'logo'}
+            className={'firebase-logo'}
+            src={
+              'https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png'
+            }
+          />
+        </ListItemIcon>
+        <ListItemText>
+          <img
+            alt={'label'}
+            className={'firebase-label'}
+            src={
+              'https://www.gstatic.com/mobilesdk/160323_mobilesdk/images/firebase_logotype_white_18dp.svg'
+            }
+          />
+        </ListItemText>
       </ListItem>
-      <ListItem>
+      <ListItem className={classes.header}>
         <ListItemIcon>
           <Home />
         </ListItemIcon>
@@ -91,4 +99,8 @@ const Navigator = () => (
   </Drawer>
 );
 
-export default Navigator;
+Navigator.propTypes = {
+  classes: PropTypes.shape({}).isRequired,
+};
+
+export default withNavigatorStyles(Navigator);
