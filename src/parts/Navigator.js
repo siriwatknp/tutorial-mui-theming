@@ -75,7 +75,9 @@ const Navigator = ({ classes }) => (
         <ListItemIcon className={classes.itemIcon}>
           <Home />
         </ListItemIcon>
-        <ListItemText>Project Overview</ListItemText>
+        <ListItemText className={classes.itemText}>
+          Project Overview
+        </ListItemText>
         <IconButton disableRipple className={classes.smallIcon}>
           <Settings />
         </IconButton>
@@ -83,7 +85,7 @@ const Navigator = ({ classes }) => (
       {categories.map(({ id, children }) => (
         <React.Fragment key={id}>
           <ListItem>
-            <ListItemText>{id}</ListItemText>
+            <ListItemText className={classes.itemText}>{id}</ListItemText>
           </ListItem>
           {children.map(({ id: childId, icon }) => (
             <ListItem button dense key={childId}>

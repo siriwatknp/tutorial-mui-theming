@@ -28,4 +28,8 @@ export default withStyles(theme => ({
   itemIcon: {
     margin: 0,
   },
+  itemText: {
+    fontSize: 14,
+    fontWeight: 500,
+  },
 }));
