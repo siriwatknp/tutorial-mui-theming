@@ -76,11 +76,9 @@ const Navigator = ({ classes }) => (
           <Home />
         </ListItemIcon>
         <ListItemText>Project Overview</ListItemText>
-        <ListItemSecondaryAction>
-          <IconButton disableRipple>
-            <Settings />
-          </IconButton>
-        </ListItemSecondaryAction>
+        <IconButton disableRipple>
+          <Settings />
+        </IconButton>
       </ListItem>
       {categories.map(({ id, children }) => (
         <React.Fragment key={id}>
