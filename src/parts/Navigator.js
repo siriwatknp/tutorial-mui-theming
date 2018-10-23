@@ -50,7 +50,7 @@ const categories = [
 
 const Navigator = ({ classes }) => (
   <Drawer variant="permanent" classes={{ paper: 'navigator' }}>
-    <List>
+    <List className={classes.list}>
       <ListItem className={classes.header}>
         <ListItemIcon>
           <img
@@ -76,7 +76,7 @@ const Navigator = ({ classes }) => (
           <Home />
         </ListItemIcon>
         <ListItemText>Project Overview</ListItemText>
-        <IconButton disableRipple>
+        <IconButton disableRipple className={classes.smallIcon}>
           <Settings />
         </IconButton>
       </ListItem>
