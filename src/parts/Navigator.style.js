@@ -35,6 +35,9 @@ export default withStyles(theme => ({
     background: '#262f3d',
     boxShadow: `inset 0 -1px ${dividerColor}`,
   },
+  unPaddedRight: {
+    paddingRight: 0,
+  },
   firebaseHeader: {
     marginLeft: theme.spacing.unit,
   },

@@ -73,7 +73,7 @@ const Navigator = ({ classes }) => (
           }
         />
       </ListItem>
-      <ListItem className={classes.header}>
+      <ListItem className={cx(classes.header, classes.unPaddedRight)}>
         <ListItemIcon className={classes.itemIcon}>
           <Home />
         </ListItemIcon>
