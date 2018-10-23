@@ -9,6 +9,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import Divider from '@material-ui/core/Divider'
 
 // ICONS
 import Settings from '@material-ui/icons/Settings';
@@ -64,15 +65,13 @@ const Navigator = ({ classes }) => (
             }
           />
         </ListItemIcon>
-        <ListItemText>
-          <img
-            alt={'label'}
-            className={'firebase-label'}
-            src={
-              'https://www.gstatic.com/mobilesdk/160323_mobilesdk/images/firebase_logotype_white_18dp.svg'
-            }
-          />
-        </ListItemText>
+        <img
+          alt={'label'}
+          className={cx('firebase-label', classes.firebaseHeader)}
+          src={
+            'https://www.gstatic.com/mobilesdk/160323_mobilesdk/images/firebase_logotype_white_18dp.svg'
+          }
+        />
       </ListItem>
       <ListItem className={classes.header}>
         <ListItemIcon className={classes.itemIcon}>
@@ -87,8 +86,14 @@ const Navigator = ({ classes }) => (
       </ListItem>
       {categories.map(({ id, children }) => (
         <React.Fragment key={id}>
-          <ListItem>
-            <ListItemText>{id}</ListItemText>
+          <ListItem className={classes.categoryHeader}>
+            <ListItemText
+              classes={{
+                primary: classes.categoryHeaderText,
+              }}
+            >
+              {id}
+            </ListItemText>
           </ListItem>
           {children.map(({ id: childId, icon, active }) => (
             <ListItem
@@ -108,6 +113,7 @@ const Navigator = ({ classes }) => (
               </ListItemText>
             </ListItem>
           ))}
+          <Divider className={classes.divider} />
         </React.Fragment>
       ))}
     </List>

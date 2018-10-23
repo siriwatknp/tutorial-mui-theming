@@ -4,6 +4,8 @@ const color = 'rgba(255, 255, 255, 0.7)';
 
 const activeColor = '#4fc3f7';
 
+const dividerColor = '#404854';
+
 export default withStyles(theme => ({
   drawer: {
     background: '#19212b',
@@ -21,8 +23,8 @@ export default withStyles(theme => ({
     '&:hover': {
       background: 'rgba(255,255,255,.08)',
     },
-    paddingTop: 6,
-    paddingBottom: 6,
+    paddingTop: theme.spacing.unit / 2,
+    paddingBottom: theme.spacing.unit / 2,
   },
   activeItem: {
     '& *': {
@@ -31,12 +33,15 @@ export default withStyles(theme => ({
   },
   header: {
     background: '#262f3d',
-    borderBottom: '1px solid #404854',
+    boxShadow: `inset 0 -1px ${dividerColor}`,
+  },
+  firebaseHeader: {
+    marginLeft: theme.spacing.unit,
   },
   smallIcon: {
     paddingTop: theme.spacing.unit,
     paddingBottom: theme.spacing.unit,
-    borderLeft: `1px solid #404854`,
+    borderLeft: `1px solid ${dividerColor}`,
     borderRadius: 0,
     '&:hover': {
       background: 'none',
@@ -44,6 +49,15 @@ export default withStyles(theme => ({
   },
   itemIcon: {
     margin: 0,
+  },
+  categoryHeader: {
+    paddingTop: 20,
+    paddingBottom: theme.spacing.unit * 2,
+  },
+  categoryHeaderText: {
+    fontSize: 15,
+    fontWeight: 500,
+    color: theme.palette.common.white,
   },
   itemText: {
     fontSize: 14,
@@ -54,4 +68,8 @@ export default withStyles(theme => ({
     },
   },
   textDense: {},
+  divider: {
+    marginTop: theme.spacing.unit * 2,
+    background: dividerColor,
+  },
 }));
