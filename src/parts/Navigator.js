@@ -52,7 +52,7 @@ const Navigator = ({ classes }) => (
   <Drawer variant="permanent" classes={{ paper: 'navigator' }}>
     <List className={classes.list}>
       <ListItem className={classes.header}>
-        <ListItemIcon>
+        <ListItemIcon className={classes.itemIcon}>
           <img
             alt={'logo'}
             className={'firebase-logo'}
@@ -72,7 +72,7 @@ const Navigator = ({ classes }) => (
         </ListItemText>
       </ListItem>
       <ListItem className={classes.header}>
-        <ListItemIcon>
+        <ListItemIcon className={classes.itemIcon}>
           <Home />
         </ListItemIcon>
         <ListItemText>Project Overview</ListItemText>
@@ -87,7 +87,7 @@ const Navigator = ({ classes }) => (
           </ListItem>
           {children.map(({ id: childId, icon }) => (
             <ListItem button dense key={childId}>
-              <ListItemIcon>{icon}</ListItemIcon>
+              <ListItemIcon className={classes.itemIcon}>{icon}</ListItemIcon>
               <ListItemText>{childId}</ListItemText>
             </ListItem>
           ))}
