@@ -2,6 +2,8 @@ import withStyles from '@material-ui/core/styles/withStyles';
 
 const color = 'rgba(255, 255, 255, 0.7)';
 
+const activeColor = '#4fc3f7';
+
 export default withStyles(theme => ({
   drawer: {
     background: '#19212b',
@@ -13,6 +15,18 @@ export default withStyles(theme => ({
     padding: 0,
     '& svg': {
       fontSize: 20,
+    },
+  },
+  item: {
+    '&:hover': {
+      background: 'rgba(255,255,255,.08)',
+    },
+    paddingTop: 6,
+    paddingBottom: 6,
+  },
+  activeItem: {
+    '& *': {
+      color: activeColor,
     },
   },
   header: {

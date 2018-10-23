@@ -30,7 +30,7 @@ const categories = [
   {
     id: 'Develop',
     children: [
-      { id: 'Authentication', icon: <People /> },
+      { id: 'Authentication', icon: <People />, active: true },
       { id: 'Database', icon: <DnsRounded /> },
       { id: 'Storage', icon: <PermMediaOutlined /> },
       { id: 'Hosting', icon: <Public /> },
@@ -90,8 +90,13 @@ const Navigator = ({ classes }) => (
           <ListItem>
             <ListItemText>{id}</ListItemText>
           </ListItem>
-          {children.map(({ id: childId, icon }) => (
-            <ListItem button dense key={childId}>
+          {children.map(({ id: childId, icon, active }) => (
+            <ListItem
+              button
+              dense
+              key={childId}
+              className={cx(classes.item, active && classes.activeItem)}
+            >
               <ListItemIcon className={classes.itemIcon}>{icon}</ListItemIcon>
               <ListItemText
                 classes={{
