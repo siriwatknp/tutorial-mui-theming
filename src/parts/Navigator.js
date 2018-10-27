@@ -1,4 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import cx from 'classnames';
+import withStyles from '@material-ui/core/styles/withStyles';
 
 // COMPONENTS
 import IconButton from '@material-ui/core/IconButton';
@@ -44,7 +48,43 @@ const categories = [
   },
 ];
 
-const Navigator = () => (
+const styles = theme => ({
+  item: {
+    '& svg': {
+      fontSize: 20,
+    },
+  },
+  actionable: {
+    paddingTop: theme.spacing.unit / 2,
+    paddingBottom: theme.spacing.unit / 2,
+    '&:hover': {
+      background: 'rgba(255,255,255,.08)',
+    },
+  },
+  itemIcon: {
+    margin: 0,
+  },
+  categoryHeader: {
+    paddingTop: 20,
+    paddingBottom: theme.spacing.unit * 2,
+  },
+  categoryHeaderText: {
+    fontSize: 15,
+    fontWeight: 500,
+    color: theme.palette.common.white,
+  },
+  itemText: {
+    fontSize: 14,
+    fontWeight: 500,
+    '&$textDense': {
+      fontSize: 14,
+      fontWeight: 500,
+    },
+  },
+  textDense: {},
+});
+
+const Navigator = ({ classes }) => (
   <Drawer variant="permanent" classes={{ paper: 'navigator' }}>
     <List>
       <ListItem>
@@ -63,11 +103,18 @@ const Navigator = () => (
           }
         />
       </ListItem>
-      <ListItem>
+      <ListItem className={classes.item}>
         <ListItemIcon>
           <Home />
         </ListItemIcon>
-        <ListItemText>Project Overview</ListItemText>
+        <ListItemText
+          classes={{
+            primary: classes.itemText,
+            textDense: classes.textDense,
+          }}
+        >
+          Project Overview
+        </ListItemText>
         <ListItemSecondaryAction>
           <IconButton disableRipple>
             <Settings />
@@ -77,12 +124,32 @@ const Navigator = () => (
       {categories.map(({ id, children }) => (
         <React.Fragment key={id}>
           <ListItem>
-            <ListItemText>{id}</ListItemText>
+            <ListItemText
+              classes={{
+                primary: classes.categoryHeaderText,
+              }}
+            >
+              {id}
+            </ListItemText>
           </ListItem>
           {children.map(({ id: childId, icon }) => (
-            <ListItem button dense key={childId}>
-              <ListItemIcon>{icon}</ListItemIcon>
-              <ListItemText>{childId}</ListItemText>
+            <ListItem
+              button
+              dense
+              key={childId}
+              className={classes.item}
+            >
+              <ListItemIcon>
+                {icon}
+              </ListItemIcon>
+              <ListItemText
+                classes={{
+                  primary: classes.itemText,
+                  textDense: classes.textDense,
+                }}
+              >
+                {childId}
+              </ListItemText>
             </ListItem>
           ))}
         </React.Fragment>
@@ -91,4 +158,8 @@ const Navigator = () => (
   </Drawer>
 );
 
-export default Navigator;
+Navigator.propTypes = {
+  classes: PropTypes.shape({}).isRequired,
+};
+
+export default withStyles(styles)(Navigator);
