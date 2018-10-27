@@ -50,6 +50,7 @@ const categories = [
 
 const styles = theme => ({
   item: {
+    padding: '4px 24px',
     '& svg': {
       fontSize: 20,
     },
@@ -65,8 +66,7 @@ const styles = theme => ({
     margin: 0,
   },
   categoryHeader: {
-    paddingTop: 20,
-    paddingBottom: theme.spacing.unit * 2,
+    padding: '24px 24px 16px',
   },
   categoryHeaderText: {
     fontSize: 15,
@@ -104,7 +104,7 @@ const Navigator = ({ classes }) => (
         />
       </ListItem>
       <ListItem className={classes.item}>
-        <ListItemIcon>
+        <ListItemIcon className={classes.itemIcon}>
           <Home />
         </ListItemIcon>
         <ListItemText
@@ -123,7 +123,7 @@ const Navigator = ({ classes }) => (
       </ListItem>
       {categories.map(({ id, children }) => (
         <React.Fragment key={id}>
-          <ListItem>
+          <ListItem className={classes.categoryHeader}>
             <ListItemText
               classes={{
                 primary: classes.categoryHeaderText,
@@ -139,7 +139,7 @@ const Navigator = ({ classes }) => (
               key={childId}
               className={classes.item}
             >
-              <ListItemIcon>
+              <ListItemIcon className={classes.itemIcon}>
                 {icon}
               </ListItemIcon>
               <ListItemText
