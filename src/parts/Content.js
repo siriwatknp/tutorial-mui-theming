@@ -22,12 +22,23 @@ const Content = () => (
   >
     <AppBar position={'static'} color={'default'}>
       <Toolbar>
-        <Search />
-        <TextField
-          fullWidth
-          placeholder={'Search by email address, phone number, or user UID'}
-        />
-        <Refresh />
+        <Grid container alignItems="center" spacing={8}>
+          <Grid item>
+            <Search />
+          </Grid>
+          <Grid item xs>
+            <TextField
+              InputProps={{
+                disableUnderline: true,
+              }}
+              fullWidth
+              placeholder={'Search by email address, phone number, or user UID'}
+            />
+          </Grid>
+          <Grid item>
+            <Refresh />
+          </Grid>
+        </Grid>
       </Toolbar>
     </AppBar>
     <Grid container justify={'center'} alignItems={'center'}>
